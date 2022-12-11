@@ -12,7 +12,7 @@ function Video() {
 
      useEffect(() => {
         
-        fetch("/https-CwickP.github.io/video.json")
+        fetch("./video.json")
         .then((res) => {
             if(!res.ok){
                 setErr(true);
