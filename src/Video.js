@@ -12,7 +12,7 @@ function Video() {
 
      useEffect(() => {
         
-        fetch("./video.json")
+        fetch("https://raw.githubusercontent.com/CwickP/https-CwickP.github.io/44b9edd0558662cf50f4a3984bf9bc8f25e95232/videos.json")
         .then((res) => {
             if(!res.ok){
                 setErr(true);
@@ -21,7 +21,8 @@ function Video() {
             return res.json()})
             .then((data) => {
                 setPending(false);
-                setVideos(data);
+                console.log(data.videolist)
+                setVideos(data.videolist);
                 setTimeout(function(){
                let textAnimation3 = gsap.timeline();
                 textAnimation3.from('.video-grid', 1, {
@@ -45,7 +46,7 @@ function Video() {
         function Components(viddy,index){
             let number = Math.random() * 100;
             return (
-                <Link to="/VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
+                <Link to="./VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
                 <div id={index} className="video-thumbs" data-file={viddy.filename} title={viddy.title} ><img src={viddy.thumb} width="100%"/><p>{viddy.title}</p></div>
                 </Link>
                 )

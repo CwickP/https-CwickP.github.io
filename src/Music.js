@@ -12,7 +12,7 @@ function Music() {
 
      useEffect(() => {
         
-        fetch("http://192.168.0.12:8000/videolist")
+        fetch("https://raw.githubusercontent.com/CwickP/https-CwickP.github.io/44b9edd0558662cf50f4a3984bf9bc8f25e95232/videos.json")
         .then((res) => {
             if(!res.ok){
                 setErr(true);
