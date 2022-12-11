@@ -41,9 +41,9 @@ function App() {
       <Router>
         <Navbar className="navvy" />
       <Routes>
-        <Route exact path="/" element={<Video/>} />
-        <Route exact path="/VideoPlayer" element={<VideoPlayer />} />
-        <Route exact path="/Music" element={<Music />} />
+        <Route exact path="/https-CwickP.github.io/" element={<Video/>} />
+        <Route exact path="/https-CwickP.github.io/VideoPlayer" element={<VideoPlayer />} />
+        <Route exact path="/https-CwickP.github.io/Music" element={<Music />} />
       </Routes> 
       </Router>
 

@@ -34,7 +34,7 @@ function VideoPlayer() {
                     <div className='col-12 mx-auto video-wrapper mb-2'>
                         <Video src={location.state.data.file} title={location.state.data.title}/>
                         <div className='movie-title'>{location.state.data.title}</div>
-                        <Link to="/" className="link-to-home">Back To Menu</Link>
+                        <Link to="/https-CwickP.github.io/" className="link-to-home">Back To Menu</Link>
                     </div>
                 </div>
             </div>
