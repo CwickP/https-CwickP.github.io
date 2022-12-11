@@ -46,10 +46,10 @@ return (<nav className="navbar navbar-expand-lg navbar-dark">
   <ul className="navbar-nav mr-auto">
     <li className="nav-item active">
     <nav className="primary-nav">
-      <NavLink style={navLinkStyles} to="/" >
+      <NavLink style={navLinkStyles} to="/https-CwickP.github.io/" >
         Videos
       </NavLink>
-      <NavLink style={navLinkStyles} to="/Music" >
+      <NavLink style={navLinkStyles} to="/https-CwickP.github.io/Music" >
         Music
       </NavLink>
     </nav>
