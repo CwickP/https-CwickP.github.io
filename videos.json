@@ -1,0 +1,94 @@
+{
+  "videolist": [
+    {
+      "filename": "./video/ALICE THROUGH THE LOOKING GLASS.mp4",
+      "title": "ALICE THROUGH THE LOOKING GLASS",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=ALICE THROUGH THE LOOKING GLASS"
+    },
+    {
+      "filename": "./video/ASTERIX THE MANSIONS OF THE GODS.mp4",
+      "title": "ASTERIX THE MANSIONS OF THE GODS",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=ASTERIX THE MANSIONS OF THE GODS"
+    },
+    {
+      "filename": "./video/DUNE.mp4",
+      "title": "DUNE",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=DUNE"
+    },
+    {
+      "filename": "./video/Freaked.mp4",
+      "title": "Freaked",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Freaked"
+    },
+    {
+      "filename": "./video/FRIDAY THE 13TH PART III.mp4",
+      "title": "FRIDAY THE 13TH PART III",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=FRIDAY THE 13TH PART III"
+    },
+    {
+      "filename": "./video/Fright.Night(1985).mp4",
+      "title": "Fright Night (1985)",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Fright.Night(1985)"
+    },
+    {
+      "filename": "./video/Gremlins.mp4",
+      "title": "Gremlins",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Gremlins"
+    },
+    {
+      "filename": "./video/Hitchhickers guide to the galaxy.mp4",
+      "title": "Hitchhickers guide to the galaxy",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Hitchhickers guide to the galaxy"
+    },
+    {
+      "filename": "./video/Mortdecai.mp4",
+      "title": "Mortdecai",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Mortdecai"
+    },
+    {
+      "filename": "./video/Naked Lunch.mp4",
+      "title": "Naked Lunch",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Naked Lunch"
+    },
+    {
+      "filename": "./video/Nathional Lampoons Christmas Vacation 2.mp4",
+      "title": "Nathional Lampoons Christmas Vacation 2",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Nathional Lampoons Christmas Vacation 2"
+    },
+    {
+      "filename": "./video/National Lampoons Christmas Vacation.mp4",
+      "title": "National Lampoons Christmas Vacation",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=National Lampoons Christmas Vacation"
+    },
+    {
+      "filename": "./video/Scrooged.mp4",
+      "title": "Scrooged",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Scrooged"
+    },
+    {
+      "filename": "./video/The Flying Machine.mp4",
+      "title": "The Flying Machine",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=The Flying Machine"
+    },
+    {
+      "filename": "./video/The Lost Boys.mp4",
+      "title": "The Lost Boys",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=The Lost Boys"
+    },
+    {
+      "filename": "./video/The Nightmare Before Christmas 1993.mp4",
+      "title": "The Nightmare Before Christmas 1993",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=The Nightmare Before Christmas 1993"
+    },
+    {
+      "filename": "./video/Thor Love and Thunder.mp4",
+      "title": "Thor Love and Thunder",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=Thor Love and Thunder"
+    },
+    {
+      "filename": "./video/What We Do in the Shadows.mp4",
+      "title": "What We Do in the Shadows",
+      "thumb": "https://via.placeholder.com/191x286/343a40/FFFFFF/?text=What We Do in the Shadows"
+    }
+  ]
+}
