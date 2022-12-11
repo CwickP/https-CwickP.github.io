@@ -12,7 +12,7 @@ function Video() {
 
      useEffect(() => {
         
-        fetch("http://192.168.0.12:8000/videolist")
+        fetch("/https-CwickP.github.io/video.json")
         .then((res) => {
             if(!res.ok){
                 setErr(true);
