@@ -2,13 +2,27 @@ import React from 'react';
 import { useState, state } from 'react';
 import { useLocation, Link, NavLink } from "react-router-dom";
 import {useEffect} from 'react';
-import { gsap, Power1} from 'gsap';
+import { animated, useSpring, easings } from 'react-spring';
 
-
-function Video() {
-    const  [videos, setVideos] = useState(null);
+function Work() {
     const  [isPending, setPending] = useState(true);
     const  [Err, setErr] = useState(false);
+    const [textprops, api2] = useSpring(
+        () => ({
+          from: { opacity: 0, position:'fixed'},
+          to: { opacity: 1, position:'fixed'},
+          delay: 500,
+          config: { 
+             duration: "500",
+            tension: 170,
+            mass: 1,
+            friction: 6,
+            velocity: 10,
+            precision: 0.01
+          }
+        }),
+        []
+      )
 
      useEffect(() => {
         
@@ -21,21 +35,6 @@ function Video() {
             return res.json()})
             .then((data) => {
                 setPending(false);
-                console.log(data.videolist)
-                setVideos(data.videolist);
-                setTimeout(function(){
-               let textAnimation3 = gsap.timeline();
-                textAnimation3.from('.video-grid', 1, {
-                    autoAlpha: 0,
-                 delay: 0.5
-                }) 
-
-                let textAnimation4 = gsap.timeline();
-                textAnimation4.from('.header-wrapper', 1, {
-                    autoAlpha: 0,
-                 delay: 0.5
-                }) 
-            }, 0)
             }).catch((err) => {
                 console.log(err.message);
                 setErr(true);
@@ -46,13 +45,13 @@ function Video() {
         function Components(viddy,index){
             let number = Math.random() * 100;
             return (
-                <Link to="./VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
+                <Link to="/https-CwickP.github.io/VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
                 <div id={index} className="video-thumbs" data-file={viddy.filename} title={viddy.title} ><img src={viddy.thumb} width="100%"/><p>{viddy.title}</p></div>
                 </Link>
                 )
         }
             if(Err){
-                return  <div className="col-5">
+                return  <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
                                 <div className='err'>
                                     <div className='col-10 mx-auto err-wrapper'>
                                         <div className='err-container'>
@@ -62,19 +61,21 @@ function Video() {
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                                </div>
             } else if(isPending && !Err){
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
-    
+            console.log(window.loaded)
       return (
-        <div className="col-10">
-            <div className='col-10 mx-auto header-wrapper'><h1>Videos</h1></div>
-                <div className='col-10 mx-auto'>
-                    {videos && <div className="video-grid">{videos.map((block, index) => Components(block,index))}</div>}
+        <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+            <animated.div style={textprops}>
+            <div className='header-wrapper work-wrapper'><h1>Work</h1></div>
+                <div className='content-body'>
+                   <p>Coming Soon!</p>  
                 </div>
+                </animated.div>
             </div>
         )
 }
 
-export default Video;
+export default Work;

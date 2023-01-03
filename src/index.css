@@ -24,6 +24,10 @@ code {
   text-decoration: underline;
  }
 
+ .about-wrapper, .skills-wrapper, .work-wrapper, .contact-wrapper {
+  margin: 43px 15px 15px;
+ }
+
  .container {
   height: -webkit-fill-available;
   margin-top: 56px;
@@ -67,12 +71,14 @@ code {
 
  .header-wrapper {
   margin: 15px;
-  margin-top: 43px;
-  text-align: center;
-  visibility: hidden;
+  margin-top: 20vh;
  }
  .header-wrapper h1 {
   filter: drop-shadow(0px -1px 4px black);
+ }
+
+ .content-body {
+  margin: 15px;
  }
 
  .movie-title{
@@ -97,18 +103,24 @@ code {
   margin: auto;
  }
  
- .navbar {
-  background: var(--bs-gray-800);
-  padding-left: 15px;
-  width: 100%;
-    position: fixed;
-    padding-right: 15px;
-    top: 0;
-    bottom: auto;
-    visibility: hidden;
-    filter: drop-shadow(0px -1px 4px black);
-    z-index: 9999;
+ @media (max-width: 576px)  {
+  .navbar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-item {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+
+  .header-wrapper {
+    margin-top: 0;
+  }
  }
+
 
  .navbar-toggler:focus {
   box-shadow: 0 0 0 0.1rem;
@@ -124,6 +136,27 @@ code {
   color: var(--bs-gray-500);
   font-weight: bold;
 }
+
+.splash-header-1 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+
+.splash-header-2 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+@media (max-width: 576px)  {
+  .splash-header-1 {
+   font-size: 2.5rem;
+  }
+  .splash-header-2 {
+    font-size: 2rem;
+   }
+}
+
 
 .video-wrapper  {
   text-align: right;
@@ -169,7 +202,7 @@ code {
   visibility: hidden;
  }
 
- @media (min-width: 768px) {
+ @media (min-width: 568px) {
   .video-grid {
     grid-template-columns: repeat(auto-fit, minmax( 170px, 1fr));
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, Link, NavLink } from "react-router-dom";
 import {useEffect} from 'react';
-import { gsap, Power1} from 'gsap';
 
 function VideoPlayer() {
     let location = useLocation();
@@ -11,19 +10,7 @@ function VideoPlayer() {
     }
 
     useEffect(() => {
-        setTimeout(function(){
-            let textAnimation3 = gsap.timeline();
-             textAnimation3.from('.video-wrapper', 1, {
-                 autoAlpha: 0,
-                delay: 0.5
-             });
-
-             let textAnimation4 = gsap.timeline();
-             textAnimation4.from('.header-wrapper', 1, {
-                 autoAlpha: 0,
-              delay: 0.5
-             });
-         }, 0)
+       
         }, []);
     
     return (

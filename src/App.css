@@ -1,5 +1,6 @@
 .App {
   height: 100%;
+  overflow: hidden;
 }
 .App-logo {
   height: 40vmin;
@@ -21,6 +22,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.logo-bg {
+  position: fixed;
+  transform: rotate(16deg);
+  top: 0;
+  left: calc(100vw / 2);
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  pointer-events: none;
+  width: 50vw;
+  min-width: 50vh;
 }
 
 .App-link {

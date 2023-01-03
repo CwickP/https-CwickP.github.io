@@ -2,7 +2,6 @@ import React from 'react';
 import { useState, state } from 'react';
 import { useLocation, Link, NavLink } from "react-router-dom";
 import {useEffect} from 'react';
-import { gsap, Power1} from 'gsap';
 
 
 function Music() {
@@ -21,20 +20,6 @@ function Music() {
             return res.json()})
             .then((data) => {
                 setPending(false);
-                setVideos(data);
-                setTimeout(function(){
-               let textAnimation3 = gsap.timeline();
-                textAnimation3.from('.text-center', 1, {
-                    autoAlpha: 0,
-                 delay: 0.5
-                });
-
-                let textAnimation4 = gsap.timeline();
-                textAnimation4.from('.header-wrapper', 1, {
-                    autoAlpha: 0,
-                 delay: 0.5
-                }) 
-            }, 0)
             }).catch((err) => {
                 console.log(err.message);
                 setErr(true);
@@ -67,7 +52,7 @@ function Music() {
             } else if(isPending && !Err){
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
-    
+            console.log(window.loaded)
       return (
         <div className="container">
         <div className="row">
