@@ -4,6 +4,8 @@
   "homepage": "https://cwickp.github.io/https-CwickP.github.io",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.50.4",
+    "@react-three/fiber": "^8.10.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -14,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.6.1",
     "react-transition-group": "^4.4.5",
+    "three": "^0.148.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

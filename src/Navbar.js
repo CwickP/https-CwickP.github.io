@@ -38,12 +38,12 @@ function Header(){
     }),
     []
   )
-return (      <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2 mx-md-4 my-4 align-self-stretch'>
+return (      <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4 my-4 align-self-stretch'>
   <animated.div style={props}>
 <nav className="navbar bg-dark">
     <ul className="navbar-nav ">
-    <li className="nav-item mr-auto my-auto">
-        <Link className="nav-link navbar-brand" to="/https-CwickP.github.io/"><img src="/https-CwickP.github.io/img/CP_logo.svg" width="49px" height="105px"/></Link>
+    <li className="nav-item mr-auto my-auto px-0">
+        <Link className="nav-link navbar-brand" to="/https-CwickP.github.io/"><img src="/https-CwickP.github.io/img/CP_logo.svg" width="49px" height="105px" alt="image of logo links to home page"/></Link>
       </li>
       <li className="nav-item mr-auto my-auto">
         <Link className="nav-link" to="/https-CwickP.github.io/About">About</Link>

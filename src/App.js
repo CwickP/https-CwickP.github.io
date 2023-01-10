@@ -1,5 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Routes,
+  Link,
+  useLocation
+} from "react-router-dom";
 import Splash from './Splash';
 import VideoPlayer from './VideoPlayer';
 import About from './About';
@@ -8,41 +15,49 @@ import Work from './Work';
 import Contact from './Contact';
 import Music from './Music';
 import Navbar from './Navbar';
-import { useState, state } from 'react';
-import {Route, Link, BrowserRouter as Router, Routes, useLocation} from 'react-router-dom';
-import { useEffect } from 'react';
+import "./App.css";
 
-function App() {
-  const [loading, setLoading] = useState(false);
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className={`App`}>
+      <Navbar/>
+        <Content />
+      </div>
+    </BrowserRouter>
+  );
+}
+
+function Content() {
+  const location = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [transitionStage, setTransistionStage] = useState("fadeIn");
 
   useEffect(() => {
-
-   }, []);
-  if(loading){
-    console.log(window)
-    return <div className='logo-container'><div className='logo-wrapper'><img className='logo' src="/https-CwickP.github.io/img/CP_logo.svg" width="71px" height="151px"/></div></div>
-
-  }else{
+    console.log(location)
+    console.log(displayLocation);
+    console.log((location !== displayLocation))
+    if (location !== displayLocation) setTransistionStage("fadeOut");
+  }, [location]);
 
   return (
-    
-    <div className="App container-fluid min-vh-100" >
-      <div className='row'>
-      <Router>
-        <Navbar className="navvy" />
-      <Routes>
-        <Route exact path="/https-CwickP.github.io/" element={<Splash/>} />
+    <div
+      className={`${transitionStage}`}
+      onAnimationEnd={() => {
+        if (transitionStage === "fadeOut") {
+          setTransistionStage("fadeIn");
+          setDisplayLocation(location);
+        }
+      }}
+    >
+      <Routes location={displayLocation}>
+      <Route exact path="/https-CwickP.github.io/" element={<Splash/>} />
         <Route exact path="/https-CwickP.github.io/About" element={<About />} />
         <Route exact path="/https-CwickP.github.io/Skills" element={<Skills />} />
         <Route exact path="/https-CwickP.github.io/Work" element={<Work />} />
         <Route exact path="/https-CwickP.github.io/Contact" element={<Contact />} />
         <Route exact path="/https-CwickP.github.io/Music" element={<Music />} />
-      </Routes> 
-      </Router>
-      </div>
+      </Routes>
     </div>
   );
-  }
 }
-
-export default App;

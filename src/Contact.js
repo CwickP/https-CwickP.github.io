@@ -10,9 +10,9 @@ function Contact() {
     const  [Err, setErr] = useState(false);
     const [textprops, api2] = useSpring(
         () => ({
-          from: { opacity: 0, position:'fixed'},
-          to: { opacity: 1, position:'fixed'},
-          delay: 500,
+          from: { opacity: 0},
+          to: { opacity: 1},
+          delay: 0,
           config: { 
              duration: "500",
             tension: 170,
@@ -52,7 +52,7 @@ function Contact() {
                 )
         }
             if(Err){
-                return  <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+                return  <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
                                 <div className='err'>
                                     <div className='col-10 mx-auto err-wrapper'>
                                         <div className='err-container'>
@@ -68,12 +68,17 @@ function Contact() {
             }
             console.log(window.loaded)
       return (
-        <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+        <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
             <animated.div style={textprops}>
             <div className='header-wrapper contact-wrapper'>
                 <h1>Contact</h1></div>
                 <div className='content-body'>
-                   <p>Coming Soon!</p>  
+                   <ul className='contact-list'>
+                    <li>Email: <a href="mailto:cwickprice@gmail.com">cwickprice@gmail.com</a></li>
+                    <li><img src="/https-CwickP.github.io/img/github.svg" width="20px" alt='github'></img></li>
+                    <li><img src="/https-CwickP.github.io/img/linkedin.svg" width="20px" alt='linkedin'></img></li>
+                    <li><img src="/https-CwickP.github.io/img/youtube.svg" width="20px" alt='youttube'></img></li>
+                   </ul>
                 </div>
                 </animated.div>
             </div>

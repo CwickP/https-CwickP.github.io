@@ -1,6 +1,8 @@
 .App {
   height: 100%;
   overflow: hidden;
+  height: 100%;
+    display: contents;
 }
 .App-logo {
   height: 40vmin;
@@ -50,7 +52,16 @@
 }
 
 #root{
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (max-width: 568px) {
+  #root {
+    flex-direction: column;
+  }
 }
 
 
@@ -67,4 +78,34 @@
 .logo-wrapper .logo {
   width: fit-content;
   filter: drop-shadow(0px -1px 4px black);
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
 }

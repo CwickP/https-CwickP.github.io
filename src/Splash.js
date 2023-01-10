@@ -11,14 +11,14 @@ function Splash() {
 
     const [props, api] = useSpring(
         () => ({
-          from: { opacity: 0,y:-100,transform:'scale(0.6)',rotate:0, y:80, x:50},
-          to: { opacity: 1,y:-200,transform:'scale(1)', rotate:16, y:-200, x:-5},
+          from: { opacity: 0},
+          to: { opacity: 1},
           config: { 
              duration: "1000",
             tension: 170,
             mass: 1,
-            friction: 2,
-            velocity: 0,
+            friction: 6,
+            velocity: 120,
             precision: 0.01
           }
         }),
@@ -27,9 +27,8 @@ function Splash() {
 
       const [textprops, api2] = useSpring(
         () => ({
-          from: { opacity: 0, position:'fixed'},
-          to: { opacity: 1, position:'fixed'},
-          delay: 500,
+          from: { opacity: 0},
+          to: { opacity: 1},
           config: { 
              duration: "1500",
             tension: 170,
@@ -45,33 +44,11 @@ function Splash() {
 
      useEffect(() => {
         
-        fetch("https://raw.githubusercontent.com/CwickP/https-CwickP.github.io/44b9edd0558662cf50f4a3984bf9bc8f25e95232/videos.json")
-        .then((res) => {
-            if(!res.ok){
-                setErr(true);
-                throw Error('Could not load video list at this time');
-            }
-            return res.json()})
-            .then((data) => {
-                setPending(false);
-               
-            }).catch((err) => {
-                console.log(err.message);
-                setErr(true);
-            })
-           
+        setPending(false);
         }, []);
 
-        function Components(viddy,index){
-            let number = Math.random() * 100;
-            return (
-                <Link to="/https-CwickP.github.io/VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
-                <div id={index} className="video-thumbs" data-file={viddy.filename} title={viddy.title} ><img src={viddy.thumb} width="100%"/><p>{viddy.title}</p></div>
-                </Link>
-                )
-        }
             if(Err){
-                return  <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+                return  <div className="col-xs-2 col-sm-10 col-md-12 col-lg-12">
                                 <div className='err'>
                                     <div className='col-10 mx-auto err-wrapper'>
                                         <div className='err-container'>
@@ -87,9 +64,9 @@ function Splash() {
             }
             console.log(window.loaded)
       return (
-        <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+        <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12 mx-4">
             <animated.div style={textprops}>
-            <div className='header-wrapper'><h1 className='splash-header-1'>Chadwick Price</h1>
+            <div className='splash-header-wrapper'><h1 className='splash-header-1'>Chadwick Price</h1>
             <div className='col-12'>
                    <p className='ps-4'>Multimedia and Web Developer</p>
                    <h2 className='splash-header-2 ps-5'>Portfolio</h2>

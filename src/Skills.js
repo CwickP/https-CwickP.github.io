@@ -10,9 +10,9 @@ function Skills() {
     const  [Err, setErr] = useState(false);
     const [textprops, api2] = useSpring(
         () => ({
-          from: { opacity: 0, position:'fixed'},
-          to: { opacity: 1, position:'fixed'},
-          delay: 500,
+          from: { opacity: 0},
+          to: { opacity: 1},
+          delay: 0,
           config: { 
              duration: "500",
             tension: 170,
@@ -52,7 +52,7 @@ function Skills() {
                 )
         }
             if(Err){
-                return  <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+                return  <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
                                 <div className='err'>
                                     <div className='col-10 mx-auto err-wrapper'>
                                         <div className='err-container'>
@@ -67,7 +67,7 @@ function Skills() {
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
       return (
-        <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
+        <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
              <animated.div style={textprops}>
             <div className='header-wrapper skills-wrapper'><h1>Skills</h1></div>
                 <div className='content-body'>
