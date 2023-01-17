@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { animated, useSpring, easings } from 'react-spring';
 
 const Navbar = () => {
+  
   const navLinkStyles = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
@@ -38,12 +39,12 @@ function Header(){
     }),
     []
   )
-return (      <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4 my-4 align-self-stretch'>
+return (      <div className='nav-wrapper col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4 my-4 align-self-stretch'>
   <animated.div style={props}>
-<nav className="navbar bg-dark">
+<nav className="navbar ">
     <ul className="navbar-nav ">
     <li className="nav-item mr-auto my-auto px-0">
-        <Link className="nav-link navbar-brand" to="/https-CwickP.github.io/"><img src="/https-CwickP.github.io/img/CP_logo.svg" width="49px" height="105px" alt="image of logo links to home page"/></Link>
+        <Link className="nav-link navbar-brand" state={{active:true}} to="/https-CwickP.github.io/"><img src="/https-CwickP.github.io/img/CP_logo.svg" width="49px" height="105px" alt="image of logo links to home page"/></Link>
       </li>
       <li className="nav-item mr-auto my-auto">
         <Link className="nav-link" to="/https-CwickP.github.io/About">About</Link>
@@ -55,7 +56,7 @@ return (      <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4 my-4 ali
         <Link className="nav-link" to="/https-CwickP.github.io/Work">Work</Link>
       </li>
       <li className="nav-item mr-auto my-auto">
-        <Link className="nav-link" to="/https-CwickP.github.io/Contact">Contact</Link>
+        <Link className="nav-link" state={{active:true}} to="/https-CwickP.github.io/Contact">Contact</Link>
       </li>
     </ul>
   </nav></animated.div>

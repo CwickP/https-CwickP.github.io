@@ -34,16 +34,21 @@ function Content() {
   const [transitionStage, setTransistionStage] = useState("fadeIn");
 
   useEffect(() => {
-    console.log(location)
-    console.log(displayLocation);
-    console.log((location !== displayLocation))
+    console.log(document.querySelector('.header-wrapper'))
+    if(document.querySelector('.header-wrapper') !==null){
+      document.querySelector('.header-wrapper').classList.remove('hide');
+      document.querySelector('.nav-wrapper').classList.remove('hide');
+      }
     if (location !== displayLocation) setTransistionStage("fadeOut");
+    if (location !== displayLocation) setTransistionStage("fadeOut");
+       
   }, [location]);
 
   return (
     <div
       className={`${transitionStage}`}
       onAnimationEnd={() => {
+        
         if (transitionStage === "fadeOut") {
           setTransistionStage("fadeIn");
           setDisplayLocation(location);

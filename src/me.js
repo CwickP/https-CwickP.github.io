@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'; /* highlight-line */
-import { Canvas, useFrame, useThree,  extend, useLoader } from 'react-three-fiber';
 import { useGLTF, useAnimations } from '@react-three/drei'; /* highlight-line */
 
 export default function Model({ ...props }) {

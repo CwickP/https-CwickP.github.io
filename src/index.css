@@ -10,6 +10,26 @@ body {
   background: var(--bs-gray-900);
 }
 
+body.splash {
+  background-image: url(../public/3D/purple_sky.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+body.splash > #root {
+  overflow: hidden;
+}
+
+.body-wrapper {
+  overflow-y: auto;
+  height: 64vh;
+}
+
+/*.work-body-wrapper {
+  height: 100vh;
+}*/
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -65,6 +85,10 @@ code {
           transition: opacity 0.7s linear;
 }
 
+
+.role-title {
+  font-weight: bold;
+}
  .splash-header-wrapper {
   margin-top: 20vh;
  }
@@ -73,21 +97,85 @@ code {
   margin-top: 10vh;
  }
 
- .header-wrapper h1 {
+ .splash-header-wrapper h1, .header-wrapper h1, h2:not(.card-title), .navbar-brand {
+  margin-bottom: 15px;
   filter: drop-shadow(0px -1px 4px black);
  }
 
   .canvas-wrapper {
-    width: 50vw;
+    width: 100%;
     height: 50vh;
     display: flex;
-    margin: auto;
-    border: solid thin var(--bs-blue);
-    border-radius: 12px;
+    position: sticky;
+    bottom:0
+  }
+  .card {
+    color: var(--bs-body-color);
+    min-width: 104px;
+  }
+  .hide {
+    display: none;
+  }
+
+  .work-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 15px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+  }
+
+  .height-100vh {
+    height: 100vh;
+  }
+  .card {
+    cursor: pointer;
+  }
+  .card.active{
+   /* margin-top: 15px;*/
+   margin: auto;
+  }
+
+  .card-body {
+    overflow-y: auto;
+    overflow-x: hidden;
   }
  .contact-list {
   list-style: none;
  }
+
+ .contact-list li {
+  display: flex;
+  align-items:center;
+  margin-bottom: 6px;
+ }
+
+ .contact-list li img {
+  margin-right: 6px;
+ }
+
+ .contact-list li span {
+  margin-right: 6px;
+ }
+
+.content-body {
+  height: 60vh;
+  overflow-y: auto;
+ }
+
+ .content-body.fullheight {
+  height: 100vh;
+ }
+
+ .work-body-wrapper-100vhvw {
+  width: 100vw;
+ }
+/*
+ .work-body-wrapper-100vhvw .content-body {
+  height: 100%;
+ }*/
 
  .movie-title{
   float: left;
@@ -111,6 +199,30 @@ code {
   margin: auto;
  }
  
+ .list-wrapper {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+ }
+ .skill-list, .learning-list {
+  column-count: 3;
+ }
+ .skill-list li, .learning-list li {
+  padding-right: 1rem;
+ }
+ @media (max-width: 860px)  {
+  .height-100vh {
+    height: 96vh;
+  }
+ }
+
+ @media (max-width: 680px)  {
+  .height-100vh {
+    height: 96vh;
+  }
+ }
  @media (max-width: 576px)  {
   .navbar {
     flex-wrap: nowrap;
@@ -124,17 +236,27 @@ code {
     padding-left: .5rem;
   }
 
+ 
 
   .canvas-wrapper {
     width: 90vw;
-    height: 58vh;
+    height: 36vh;
     display: flex;
     margin: auto;
+    position: sticky;
   }
 
   .header-wrapper {
     margin-top: 0;
   }
+
+  .skill-list, .learning-list {
+    column-count: 2;
+   }
+
+   .skill-list li, .learning-list li {
+    padding-right: 1rem;
+   }
  }
 
 

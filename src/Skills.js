@@ -27,30 +27,11 @@ function Skills() {
 
      useEffect(() => {
         
-        fetch("https://raw.githubusercontent.com/CwickP/https-CwickP.github.io/44b9edd0558662cf50f4a3984bf9bc8f25e95232/videos.json")
-        .then((res) => {
-            if(!res.ok){
-                setErr(true);
-                throw Error('Could not load video list at this time');
-            }
-            return res.json()})
-            .then((data) => {
-                setPending(false);
-            }).catch((err) => {
-                console.log(err.message);
-                setErr(true);
-            })
+        setPending(false);
            
         }, []);
 
-        function Components(viddy,index){
-            let number = Math.random() * 100;
-            return (
-                <Link to="/https-CwickP.github.io/VideoPlayer" key={number.toString()} state={{ data: {title: viddy.title, file: viddy.filename  }}} className="link">
-                <div id={index} className="video-thumbs" data-file={viddy.filename} title={viddy.title} ><img src={viddy.thumb} width="100%"/><p>{viddy.title}</p></div>
-                </Link>
-                )
-        }
+        
             if(Err){
                 return  <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
                                 <div className='err'>
@@ -67,14 +48,66 @@ function Skills() {
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
       return (
-        <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
+        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-11 mx-4">
+            
              <animated.div style={textprops}>
-            <div className='header-wrapper skills-wrapper'><h1>Skills</h1></div>
+            <div className='header-wrapper skills-wrapper'><h1>Skills & Experience</h1></div>
+            <div className='body-wrapper'>
                 <div className='content-body'>
-                   <p>Coming Soon!</p>  
-                </div>
+                    <div className='list-wrapper'>
+                   <ol className='skill-list'>
+                    <li>User Interface Design</li>
+                    <li>WCGAG 2.0 / WAI-ARIA Accessibility</li>
+                    <li>Node.js</li>
+                    <li>Gulp / Mammoth</li>
+                    <li>Lint / Eslint</li>
+                    <li>LitElement</li>
+                    <li>AWS</li>
+                    <li>HTML</li>
+                    <li>XML / JSON</li>
+                    <li>CSS / SCSS / SASS</li>
+                    <li>JavaScript</li>
+                    <li>ES6 / Typescript</li>
+                    <li>Adobe Creative Suite</li>
+                    <li>Expressions for After Effects</li>
+                    <li>Video / Audio Editing</li>
+                    <li>Angular</li>
+                    <li>Reactjs</li>
+                    <li>Threejs</li>
+                    <li>FFMPEG</li>
+                    <li>HLS / MPEG-DASH</li>
+                    <li>JSFL / JSAPI / XMLUI</li>
+                    <li>SQL</li>
+                    <li>Quark.js</li>
+                    <li>Vue.js</li>
+                    <li>ASP / PHP</li>
+                    <li>Visual Basic</li>
+                    <li>Visual Studio Code</li>
+                    <li>SCORM</li>
+                    <li>aFrame</li>
+                    <li>gsap</li>
+                    <li>Bootstrap</li>
+                    <li>jQuery</li>
+                    <li>D2L Brightspace Valence API</li>
+                   </ol>
+                   <h2>Currently Studying or Upgrading</h2>
+                   <ol className='learning-list'>
+                    <li>Angular</li>
+                    <li>Reactjs / Threejs</li>
+                    <li>jest-dom</li>
+                    <li>fluent-ffmpeg API</li>
+                    <li>Unity</li>
+                    <li>Unreal 5 Engine</li>
+                    <li>Blender</li>
+                    <li>Python</li>
+                    <li>C++ / C#</li>
+                    <li>AR / VR / XR</li>
+                    <li>Figma</li>
+                   </ol>
+                   </div>
+                </div></div>
                 </animated.div>
-            </div>
+                </div>
         )
 }
 

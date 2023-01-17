@@ -68,16 +68,16 @@ function Contact() {
             }
             console.log(window.loaded)
       return (
-        <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12">
+        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-11 mx-4">
             <animated.div style={textprops}>
             <div className='header-wrapper contact-wrapper'>
                 <h1>Contact</h1></div>
                 <div className='content-body'>
                    <ul className='contact-list'>
-                    <li>Email: <a href="mailto:cwickprice@gmail.com">cwickprice@gmail.com</a></li>
-                    <li><img src="/https-CwickP.github.io/img/github.svg" width="20px" alt='github'></img></li>
-                    <li><img src="/https-CwickP.github.io/img/linkedin.svg" width="20px" alt='linkedin'></img></li>
-                    <li><img src="/https-CwickP.github.io/img/youtube.svg" width="20px" alt='youttube'></img></li>
+                    <li><span>Email:</span> <a href="mailto:cwickprice@gmail.com">cwickprice@gmail.com</a></li>
+                    <li><img src="/https-CwickP.github.io/img/github.svg" width="20px" alt='github'></img>Github</li>
+                    <li><img src="/https-CwickP.github.io/img/linkedin.svg" width="20px" alt='linkedin'></img> linkedIn</li>
+                    <li><img src="/https-CwickP.github.io/img/youtube.svg" width="20px" alt='youttube'></img>YouTube</li>
                    </ul>
                 </div>
                 </animated.div>

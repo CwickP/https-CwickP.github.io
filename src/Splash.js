@@ -43,7 +43,7 @@ function Splash() {
 
 
      useEffect(() => {
-        
+       
         setPending(false);
         }, []);
 
@@ -62,19 +62,18 @@ function Splash() {
             } else if(isPending && !Err){
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
-            console.log(window.loaded)
       return (
         <div className="col-xs-2 col-sm-12 col-md-12 col-lg-12 mx-4">
             <animated.div style={textprops}>
             <div className='splash-header-wrapper'><h1 className='splash-header-1'>Chadwick Price</h1>
             <div className='col-12'>
-                   <p className='ps-4'>Multimedia and Web Developer</p>
+                   <p className='role-title ps-4'>Multimedia and Web Developer</p>
                    <h2 className='splash-header-2 ps-5'>Portfolio</h2>
                 </div>
                 
             </div>
             </animated.div>
-                <animated.div style={props}><img className='logo-bg' src="/https-CwickP.github.io/img/logo_initials.svg" /></animated.div>
+                <animated.div style={props}><img alt='' className='logo-bg' src="/https-CwickP.github.io/img/logo_initials.svg" /></animated.div>
             </div>
         )
 }
