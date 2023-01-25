@@ -68,19 +68,23 @@ function Contact() {
             }
             console.log(window.loaded)
       return (
-        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-11 mx-4">
+        <div className='row justify-content-center h-100'>
+        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4">
             <animated.div style={textprops}>
             <div className='header-wrapper contact-wrapper'>
                 <h1>Contact</h1></div>
+                <div className='body-wrapper'>
                 <div className='content-body'>
                    <ul className='contact-list'>
                     <li><span>Email:</span> <a href="mailto:cwickprice@gmail.com">cwickprice@gmail.com</a></li>
-                    <li><img src="/https-CwickP.github.io/img/github.svg" width="20px" alt='github'></img>Github</li>
-                    <li><img src="/https-CwickP.github.io/img/linkedin.svg" width="20px" alt='linkedin'></img> linkedIn</li>
-                    <li><img src="/https-CwickP.github.io/img/youtube.svg" width="20px" alt='youttube'></img>YouTube</li>
+                    <li><a href='https://github.com/CwickP?tab=repositories' target="_blank" ><img src="/https-CwickP.github.io/img/github.svg" alt='github'></img>Github - more to be added soon!</a></li>
+                    <li><a href="https://www.linkedin.com/in/chadwick-price-53378218/" target="_blank" ><img src="/https-CwickP.github.io/img/linkedin.svg" alt='linkedin'></img> linkedIn</a></li>
+                    <li><img src="/https-CwickP.github.io/img/youtube.svg"  alt='youttube'></img>YouTube - coming soon!</li>
                    </ul>
                 </div>
+                </div>
                 </animated.div>
+            </div>
             </div>
         )
 }

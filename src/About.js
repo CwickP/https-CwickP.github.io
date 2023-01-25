@@ -25,7 +25,7 @@ const Background = props => {
 
 function About() {
     const  [isPending, setPending] = useState(true);
-    const [dimensions, setDimensions] = useState({ width:0, height: 0 })
+    const [dimensions, setDimensions] = useState({ width:'50%' })
     const  [Err, setErr] = useState(false);
     const [textprops, api2] = useSpring(
         () => ({
@@ -43,10 +43,17 @@ function About() {
         }),
         []
       );
-        
+
+      window.addEventListener('resize', handleResize)
+      function handleResize() {
+        console.log(screen.orientation.type)
+        setDimensions({width: screen.orientation.type === 'portrait-primary'  ? '80%': '50%'})
+      }
      useEffect(() => {
+
+      handleResize() 
         
-        setPending(false);             
+        setPending(false);  
         }, []);
             if(Err){
                 return  <div className="col-xs-2 col-sm-10 col-md-8 col-lg-8">
@@ -66,17 +73,20 @@ function About() {
            
       return (
         <>
-        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-11 mx-4" style={{height: '100%'}}>
+        <div className='row justify-content-center h-100'>
+        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4" style={{height: '100%'}}>
              <animated.div style={textprops}>
             <div className='header-wrapper about-wrapper'><h1>About</h1></div>
+            <div className='body-wrapper'>
                 <div className="content-body">
                    <p>I am an initiative-taking and progress-driven Multimedia and Web Developer with over 18 years of experience in the industry.</p>
                     <p>I enjoy finding creative solutions to eliminate obstacles. I’m highly adept at managing competing priorities and establishing clear deadlines</p> 
                 </div> 
+                </div>
                 </animated.div>
                 </div>
                 
-                <div className='canvas-wrapper'>
+                <div className='canvas-wrapper' style={dimensions}>
                 <Canvas>
                 <Suspense fallback={<Loader />}>
                 <ambientLight color="purple"  />
@@ -86,7 +96,7 @@ function About() {
                 </Suspense>
                 </Canvas>
                 </div>
-                
+                </div>
                 </>
         )
 }

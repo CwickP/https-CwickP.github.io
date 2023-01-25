@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState, state } from 'react';
-import { useLocation, Link, NavLink } from "react-router-dom";
-import {useEffect} from 'react';
-import { animated, useSpring, easings } from 'react-spring';
+import {useEffect, useLayoutEffect} from 'react';
+import { animated, useSpring } from 'react-spring';
 
 
 function Skills() {
     const  [isPending, setPending] = useState(true);
     const  [Err, setErr] = useState(false);
+    const [deviceOrientation, setDeviceOrientation] = useState('');
     const [textprops, api2] = useSpring(
         () => ({
           from: { opacity: 0},
@@ -25,9 +25,38 @@ function Skills() {
         []
       )
 
-     useEffect(() => {
+      const determineContentHeight = () => {
+        console.log(document.querySelector('.body-wrapper'))
+        if(document.querySelector('.body-wrapper') !== null){
+        if(window.matchMedia("(max-width: 576px)").matches){
+            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15+(document.querySelector('.nav-wrapper').offsetHeight+(document.querySelector('.nav-wrapper').getBoundingClientRect().y*2) ))
+        }else{
+            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15)
+        }
+    }
+     }
+
+      useLayoutEffect(()=>{
         
+        if( document.querySelector('.body-wrapper') !== null){
+            if(document.querySelector('.body-wrapper') !== null){
+                setDeviceOrientation(screen.orientation.type)
+            }
+        }
+     })
+
+     useEffect(() => {
+        function handleResize() {
+           //setDeviceOrientation(screen.orientation.type)
+           setTimeout(function(){
+            setDeviceOrientation(screen.orientation.type);
+            console.log(screen.orientation.type)
+           },250)
+          }
+
         setPending(false);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize)
            
         }, []);
 
@@ -48,11 +77,13 @@ function Skills() {
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
       return (
-        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-11 mx-4">
+        <div className='row justify-content-center h-100'>
+        <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4">
             
              <animated.div style={textprops}>
             <div className='header-wrapper skills-wrapper'><h1>Skills & Experience</h1></div>
-            <div className='body-wrapper'>
+            <div className='body-wrapper' style={{
+        maxHeight: deviceOrientation === 'landscape-primary'|| deviceOrientation === 'landscape-secondary' ? document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15) : determineContentHeight()}} >
                 <div className='content-body'>
                     <div className='list-wrapper'>
                    <ol className='skill-list'>
@@ -107,6 +138,7 @@ function Skills() {
                    </div>
                 </div></div>
                 </animated.div>
+                </div>
                 </div>
         )
 }

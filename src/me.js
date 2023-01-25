@@ -11,7 +11,6 @@ export default function Model({ ...props }) {
    // console.log(actions);
 
    useEffect(() => {/* highlight-line */
-   console.log(animations)
 //   actions.Animation[0].play();
      actions['me_model_Standing_W_Briefcase_Idle_Anim_0']?.play(); /* highlight-line */
    }, [mixer]); /* highlight-line */

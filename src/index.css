@@ -11,7 +11,8 @@ body {
 }
 
 body.splash {
-  background-image: url(../public/3D/purple_sky.jpg);
+  /*background-image: url(../public/3D/purple_sky-hd.jpg);*/
+  background-image: url(../public/3D/wyuueg_b138f19233d458a8858519e0d4dc81c4892f2ec6.jpg);
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -23,7 +24,6 @@ body.splash > #root {
 
 .body-wrapper {
   overflow-y: auto;
-  height: 64vh;
 }
 
 /*.work-body-wrapper {
@@ -38,11 +38,22 @@ code {
   color: var(--bs-gray-300) !important;
   font-weight: bold;
   text-decoration: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
  }
  a:hover {
   color: var(--bs-gray-300);
   text-decoration: underline;
  }
+
+ .contact-list li a img {
+    filter: brightness(2);
+    width: 16px;
+ }
+
+ .contact-list li img {
+  width: 16px;
+}
 
  .container {
   height: -webkit-fill-available;
@@ -103,15 +114,15 @@ code {
  }
 
   .canvas-wrapper {
-    width: 100%;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     position: sticky;
     bottom:0
   }
   .card {
-    color: var(--bs-body-color);
     min-width: 104px;
+    background-color: rgba(77,46,87,0.7);
+    width: 100%;
   }
   .hide {
     display: none;
@@ -119,12 +130,13 @@ code {
 
   .work-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     grid-gap: 15px;
     margin-bottom: 15px;
-    overflow-y: auto;
+    top: 0;
+    position: relative;
   }
 
   .height-100vh {
@@ -138,9 +150,15 @@ code {
    margin: auto;
   }
 
+  .card-header {
+    background-color: rgba(92, 47, 107, 0.7);
+  }
+
   .card-body {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
   }
  .contact-list {
   list-style: none;
@@ -154,6 +172,8 @@ code {
 
  .contact-list li img {
   margin-right: 6px;
+  margin-top: auto;
+  margin-bottom: auto;
  }
 
  .contact-list li span {
@@ -161,8 +181,6 @@ code {
  }
 
 .content-body {
-  height: 60vh;
-  overflow-y: auto;
  }
 
  .content-body.fullheight {
@@ -172,11 +190,49 @@ code {
  .work-body-wrapper-100vhvw {
   width: 100vw;
  }
-/*
- .work-body-wrapper-100vhvw .content-body {
-  height: 100%;
- }*/
 
+ ::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: purple;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ .content-wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+ }
+
+ .work-list {
+  list-style: none;
+ }
+
+ .work-list h5 {
+  margin-top: 15px;
+ }
+
+ .work-list li div img {
+  border: solid 2px black;
+  width: 56vw;
+  height: fit-content;
+  max-width: 363px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+ }
  .movie-title{
   float: left;
  }
@@ -199,12 +255,17 @@ code {
   margin: auto;
  }
  
- .list-wrapper {
+ .body-wrapper, .work-wrapper {
   background-color: rgba(0,0,0,0.7);
   border-radius: 6px;
   padding: 10px;
   margin-bottom: 15px;
   padding-top: 15px;
+ }
+
+ .work-wrapper{
+ /*max-height: 75vh;*/
+  overflow-y: scroll;
  }
  .skill-list, .learning-list {
   column-count: 3;
@@ -239,7 +300,6 @@ code {
  
 
   .canvas-wrapper {
-    width: 90vw;
     height: 36vh;
     display: flex;
     margin: auto;

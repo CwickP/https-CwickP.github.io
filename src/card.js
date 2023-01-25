@@ -13,52 +13,39 @@ function Card(props) {
     const [isAnimating, setIsAnimating] = React.useState(false);
     const elementRef = React.useRef();
     const elementRef1 = React.useRef();
-
-    function handleLangChange(props) {
-      setIsOpen(val => !val)
+  
+    function handleClickChange(props) {
+      setIsOpen(val => !val);
       props.handleChange(props)
   }
-      
+  
     const [style, setStyle] = useSpring(() => ({
         onRest: () => setIsAnimating(false),
         config
       }))
 
       useEffect(() => {
-        console.log("???")
         const { offsetHeight, offsetWidth, scrollHeight, scrollWidth, height } = elementRef.current;
-        const { offsetHeight1, offsetWidth1, scrollHeight1, scrollWidth1 } = elementRef1.current;
-        console.log(elementRef.current.scrollHeight)
-        //setStyle.start({ height: offsetHeight + 'px', immediate: true})
-        setStyle.start({ height: (isOpen ? elementRef.current.scrollHeight : 0) + 'px', immediate: false, delay: isOpen ? 250 : 0})
-        setStyle.start({ width: (isOpen ? '90' :  '70') + '%', immediate: false, config: {
-            tension: 180,
-            friction: 12,
-            duration: 200
-          }})
-        setStyle.start({ opacity: (isOpen ? 1 : 0), immediate: false, delay: isOpen ? 400 : 0, config: {
-            tension: 180,
-            friction: 12,
-            duration:isOpen ? 500 : 0
-          }});
-        setIsAnimating(true)
-        heightRef.current = isOpen ? elementRef.current.scrollHeight : '0px';
-        widthRef.current = isOpen ? '90%' :  '70%';
-        opacityRef.opacity = isOpen ? '1' : '0';
-          
-      }, [isOpen, setStyle])
+
+        function handleResize() {
+          setStyle.start({ height: (isOpen ? elementRef.current.querySelector('.content-wrapper').offsetHeight : 0) + 'px', immediate: true})
+          props.handleChange(props)
+        }
+        setStyle.start({ height: (isOpen ? elementRef.current.querySelector('.content-wrapper').offsetHeight : 0) + 'px', immediate: false, delay: isOpen ? 250 : 0})
+        setIsAnimating(true);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize)
+      }, [elementRef, isOpen, setStyle])
 
     return (
-        <animated.div ref={elementRef1} className={`card ${isOpen ? 'active ' : ''} ${props.className} `} id={props.id} onClick={() => handleLangChange(props)} style={{ width: isAnimating ? style.width : widthRef.current}}>
+        <animated.div ref={elementRef1} className={`card ${isOpen ? 'active ' : ''} ${props.className} `} id={props.id} onClick={() => handleClickChange(props)} >
             <div className='card-header'>
             <h2 className="card-title">{props.title}</h2>
             <p>{props.date}</p>
             </div>
-            <div className='card-body' style={{maxHeight: isOpen ? '60vh' : '90vh', padding: isOpen ? '': '0'}}>
+            <div className='card-body'>
               <animated.div ref={elementRef} style={{
-                    overflow: 'hidden',
-        height: isAnimating ? style.height : heightRef.current,
-        opacity:isAnimating ? style.opacity : heightRef.opacity}}>
+        height: isAnimating ? style.height : heightRef.current}}>
                 {props.children}
                 </animated.div>
                 </div>
