@@ -39,7 +39,7 @@ function Header(){
     }),
     []
   )
-return (      <div className='nav-wrapper col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4 my-4 align-self-stretch'>
+return (      <div className='nav-wrapper col-xs-12 col-sm-1 col-md-1 col-lg-1 mx-4'>
   <animated.div style={props}>
 <nav className="navbar ">
     <ul className="navbar-nav ">
@@ -59,7 +59,9 @@ return (      <div className='nav-wrapper col-xs-12 col-sm-1 col-md-1 col-lg-1 m
         <Link className="nav-link" state={{active:true}} to="/https-CwickP.github.io/Contact">Contact</Link>
       </li>
     </ul>
-  </nav></animated.div>
+  </nav>
+  </animated.div>
+  
 </div>
 
 

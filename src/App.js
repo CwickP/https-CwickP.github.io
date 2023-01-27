@@ -15,6 +15,7 @@ import Work from './Work';
 import Contact from './Contact';
 import Music from './Music';
 import Navbar from './Navbar';
+import Footer from "./Footer";
 import "./App.css";
 
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
     <BrowserRouter>
       <div className={`App`}>
       <Navbar/>
-        <Content />
+      <Content />
+      <Footer />
       </div>
     </BrowserRouter>
   );

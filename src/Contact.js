@@ -68,7 +68,7 @@ function Contact() {
             }
             console.log(window.loaded)
       return (
-        <div className='row justify-content-center h-100'>
+        <div className='main row justify-content-center w-100'>
         <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4">
             <animated.div style={textprops}>
             <div className='header-wrapper contact-wrapper'>

@@ -2,11 +2,21 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-    display: contents;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: 1fr 25vh;
+  grid-template-areas: "nav main"
+                       "nav footer";
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+@media (orientation: portrait) {
+  .App {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 86% 70px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -53,13 +63,17 @@
 
 #root{
   width: 100vw;
-  height: 100vh;
-  display: flex;
+  height: 100%;
 }
-
 @media (max-width: 576px) {
-  #root {
-    flex-direction: column;
+  .App {
+    min-height: 100%;
+    height: 100%;
+    grid-template-columns: 100%;
+  grid-template-rows: 18% auto 166px;
+    grid-template-areas: "nav"
+                       "main"
+                       "footer";
   }
 
   

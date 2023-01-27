@@ -33,13 +33,14 @@ function Work() {
      }
 
      const determineContentHeight = () => {
+        console.log("??")
         if(document.querySelector('.work-body-wrapper') !== null){
-        if(window.matchMedia("(max-width: 576px)").matches){
-            return document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+15+(document.querySelector('.nav-wrapper').offsetHeight+(document.querySelector('.nav-wrapper').getBoundingClientRect().y*2) ))
-        }else{
-            return document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+15)
+            if(window.matchMedia("(max-width: 576px)").matches){
+                return document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight+15+(document.querySelector('.nav-wrapper').offsetHeight+(document.querySelector('.nav-wrapper').getBoundingClientRect().y*2) ))
+            }else{
+                return document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight+15)
+            }
         }
-    }
      }
 
      useLayoutEffect(()=>{
@@ -71,14 +72,14 @@ function Work() {
             }
             
       return (
-        <div className='row justify-content-center h-100'>
+        <div className='main row justify-content-center h-100'>
         <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4">
             <animated.div style={textprops}>
             
             <div className='header-wrapper'><h1>Work</h1>
             </div>
             <div className='work-body-wrapper work-wrapper px-4' style={{
-        height: deviceOrientation === 'landscape-primary'|| deviceOrientation === 'landscape-secondary' ? document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+15) : determineContentHeight()}} >
+        height: deviceOrientation === 'landscape-primary'|| deviceOrientation === 'landscape-secondary' ? document.documentElement.clientHeight - (document.querySelector('.work-body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight) : determineContentHeight()}} >
                 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in est velit. Donec pellentesque congue nunc, in mollis nisi porta id. Vivamus a pellentesque sapien. Integer ac posuere massa. Curabitur sit amet nisl rutrum, auctor elit non, euismod lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam blandit sapien id vulputate porta. Donec et purus dolor. Praesent eleifend lacinia scelerisque. Morbi justo turpis, condimentum et fringilla vulputate, placerat nec mi. Vestibulum semper, velit vel maximus posuere, turpis lectus interdum lectus, nec iaculis orci mauris sed nibh. Phasellus sit amet arcu faucibus, tempor justo at, dictum purus. Morbi sagittis arcu lorem, eget tincidunt metus posuere in. Aliquam in scelerisque lectus. Praesent malesuada nulla non nisi pellentesque commodo.</p>
                 <div className='content-body'>
@@ -124,7 +125,7 @@ function Work() {
                         <h3>Overview</h3>
                         <ol>
                             <li>Designed storyboards and flow charts according to business and usability requirements for internet, intranet, e-mail campaigns, and kiosks.</li>
-                            <li>Designed and produced content management systems, internet, intranet and platform applications for medium to large organizations including the Government of Ontario, Honda/Acura, Microsoft and MSN.</li>
+                            <li>Designed and produced content management systems, internet, intranet and platform applications, sharePoint sites for medium to large organizations including the Government of Ontario, Honda/Acura, Microsoft and MSN.</li>
                             <li>Promoted to team manager</li>
                             <li>Created an internal developer resource site to help developers share/learn coding techniques.</li>
                         </ol>

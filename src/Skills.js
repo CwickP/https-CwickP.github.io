@@ -29,9 +29,9 @@ function Skills() {
         console.log(document.querySelector('.body-wrapper'))
         if(document.querySelector('.body-wrapper') !== null){
         if(window.matchMedia("(max-width: 576px)").matches){
-            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15+(document.querySelector('.nav-wrapper').offsetHeight+(document.querySelector('.nav-wrapper').getBoundingClientRect().y*2) ))
+            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight+15+(document.querySelector('.nav-wrapper').offsetHeight+(document.querySelector('.nav-wrapper').getBoundingClientRect().y*2) ))
         }else{
-            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15)
+            return document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight+15)
         }
     }
      }
@@ -77,18 +77,19 @@ function Skills() {
                 return <div className='loader'><div className='spinner-container'><div className="spinner-border" role="status" ></div></div></div>;
             }
       return (
-        <div className='row justify-content-center h-100'>
+        <div className='main row justify-content-center h-100'>
         <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4">
             
              <animated.div style={textprops}>
             <div className='header-wrapper skills-wrapper'><h1>Skills & Experience</h1></div>
             <div className='body-wrapper' style={{
-        maxHeight: deviceOrientation === 'landscape-primary'|| deviceOrientation === 'landscape-secondary' ? document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+15) : determineContentHeight()}} >
+        maxHeight: deviceOrientation === 'landscape-primary'|| deviceOrientation === 'landscape-secondary' ? document.documentElement.clientHeight - (document.querySelector('.body-wrapper').offsetTop+document.querySelector('.footer').offsetHeight+15) : determineContentHeight()}} >
                 <div className='content-body'>
                     <div className='list-wrapper'>
                    <ol className='skill-list'>
                     <li>User Interface Design</li>
                     <li>WCGAG 2.0 / WAI-ARIA Accessibility</li>
+                    <li>D3</li>
                     <li>Node.js</li>
                     <li>Gulp / Mammoth</li>
                     <li>Lint / Eslint</li>
@@ -120,6 +121,8 @@ function Skills() {
                     <li>Bootstrap</li>
                     <li>jQuery</li>
                     <li>D2L Brightspace Valence API</li>
+                    <li>Jira / Confluence</li>
+                    <li>Salesforce</li>
                    </ol>
                    <h2>Currently Studying or Upgrading</h2>
                    <ol className='learning-list'>

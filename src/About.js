@@ -73,7 +73,7 @@ function About() {
            
       return (
         <>
-        <div className='row justify-content-center h-100'>
+        <div className='main row justify-content-center h-100'>
         <div className="col-xs-2 col-sm-11 col-md-11 col-lg-10 px-4" style={{height: '100%'}}>
              <animated.div style={textprops}>
             <div className='header-wrapper about-wrapper'><h1>About</h1></div>
@@ -84,17 +84,6 @@ function About() {
                 </div> 
                 </div>
                 </animated.div>
-                </div>
-                
-                <div className='canvas-wrapper' style={dimensions}>
-                <Canvas>
-                <Suspense fallback={<Loader />}>
-                <ambientLight color="purple"  />
-                <directionalLight position={[-5, 5, 5]} />
-                <pointLight position={[0, 0, 0]} /> 
-                   <Model/>
-                </Suspense>
-                </Canvas>
                 </div>
                 </div>
                 </>
